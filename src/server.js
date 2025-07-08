@@ -15,7 +15,13 @@ const app = express();
 // 미들웨어 설정
 app.use(helmet());
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:8000',
+  origin: [
+    'https://cleaningworkshop.co.kr',
+    'https://www.cleaningworkshop.co.kr',
+    'https://cleaningworkshop-r9pd.vercel.app',
+    'http://localhost:8080',
+    'http://localhost:8000'
+  ],
   credentials: true
 }));
 app.use(morgan('dev'));
